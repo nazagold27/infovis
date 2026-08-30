@@ -1,28 +1,291 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Trabajos infovis</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mi Letterboxd en datos</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f6f7;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* PORTADA */
+    header {
+      background: #14181c;
+      color: white;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin: 0 0 15px;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: auto;
+      color: #b8c1c8;
+      font-size: 18px;
+    }
+
+    .accent {
+      color: #00e054;
+    }
+
+    /* CONTENIDO */
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 0 auto 55px;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .intro p {
+      color: #555;
+    }
+
+    /* TARJETAS DE VISUALIZACIONES */
+    .visualizacion {
+      background: white;
+      padding: 35px;
+      margin-bottom: 45px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+    }
+
+    .herramienta {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: bold;
+      color: #00a83e;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .visualizacion h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 28px;
+      line-height: 1.25;
+    }
+
+    .descripcion {
+      color: #555;
+      margin-top: 0;
+      margin-bottom: 30px;
+      max-width: 800px;
+    }
+
+    /* RAWGRAPHS */
+    .rawgraph {
+      width: 100%;
+      max-width: 850px;
+      display: block;
+      margin: 25px auto;
+    }
+
+    .nota {
+      font-size: 14px;
+      color: #777;
+      margin-top: 20px;
+      font-style: italic;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #14181c;
+      color: #9ab;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 32px;
+      }
+
+      .visualizacion {
+        padding: 22px;
+      }
+
+      .visualizacion h2 {
+        font-size: 23px;
+      }
+    }
+  </style>
 </head>
+
+
 <body>
 
-  <h1>RAWGraphs</h1>
-  <a href="https://www.rawgraphs.io/">Rawgraphs</a>
-  <object data="bumpchart.svg" type="image/svg+xml"></object>
+  <!-- PORTADA -->
+  <header>
+    <h1>Mi <span class="accent">Letterboxd</span> en datos</h1>
 
-  <h1>¿De qué décadas son las películas que más veo y cuánto me gustan?</h1>
+    <p>
+      Una exploración visual de las películas que veo, cómo las puntúo
+      y qué dicen mis elecciones sobre mis gustos cinematográficos.
+    </p>
+  </header>
 
-<p>
-    Cantidad de películas que vi según su década de estreno.
-    Interactuá con cada barra para conocer mi rating promedio.
-<div class="flourish-embed flourish-chart" data-src="visualisation/30105516"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/30105516/thumbnail" width="100%" alt="chart visualization" /></noscript></div>  
-  <h2>¿Veo las películas que digo que quiero ver?</h2>
 
-<p>
-  Comparo las décadas de las películas que ya vi con las que todavía tengo
-  guardadas en mi watchlist.
-</p>
+  <main>
 
-<iframe title="¿Veo las películas que digo que quiero ver?" aria-label="Stacked Bars" id="datawrapper-chart-d8E4g" src="https://datawrapper.dwcdn.net/d8E4g/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="402" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script></body>
+    <!-- INTRODUCCIÓN -->
+    <section class="intro">
+      <h2>¿Qué dicen mis películas sobre mí?</h2>
+
+      <p>
+        A partir de mis datos personales de Letterboxd analicé las películas
+        que vi, sus décadas de estreno, mis puntuaciones, los géneros que más
+        consumo y las películas que todavía tengo pendientes.
+      </p>
+    </section>
+
+
+    <!-- FLOURISH -->
+    <section class="visualizacion">
+
+      <span class="herramienta">Flourish</span>
+
+      <h2>
+        ¿De qué décadas son las películas que más veo y cuánto me gustan?
+      </h2>
+
+      <p class="descripcion">
+        Cantidad de películas que vi según su década de estreno.
+        Interactuá con cada barra para conocer mi puntuación promedio
+        para las películas de esa década.
+      </p>
+
+      <div
+        class="flourish-embed flourish-chart"
+        data-src="visualisation/30105516">
+
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
+
+        <noscript>
+          <img
+            src="https://public.flourish.studio/visualisation/30105516/thumbnail"
+            width="100%"
+            alt="Películas vistas y puntuación promedio por década">
+        </noscript>
+
+      </div>
+
+    </section>
+
+
+    <!-- DATAWRAPPER -->
+    <section class="visualizacion">
+
+      <span class="herramienta">Datawrapper</span>
+
+      <h2>¿Veo las películas que digo que quiero ver?</h2>
+
+      <p class="descripcion">
+        Comparo cómo se distribuyen por década las películas que ya vi
+        con las que todavía tengo guardadas en mi watchlist.
+      </p>
+
+      <iframe
+        title="¿Veo las películas que digo que quiero ver?"
+        aria-label="Comparación de películas vistas y watchlist por década"
+        id="datawrapper-chart-d8E4g"
+        src="https://datawrapper.dwcdn.net/d8E4g/2/"
+        scrolling="no"
+        frameborder="0"
+        style="width: 0; min-width: 100% !important; border: none;"
+        height="402"
+        data-external="1">
+      </iframe>
+
+    </section>
+
+
+    <!-- RAWGRAPHS -->
+    <section class="visualizacion">
+
+      <span class="herramienta">RAWGraphs</span>
+
+      <h2>¿Qué géneros dominan las películas que veo?</h2>
+
+      <p class="descripcion">
+        Distribución de las 104 películas que vi en Letterboxd
+        según su género principal. El tamaño de cada sección representa
+        cuántas películas corresponden a ese género.
+      </p>
+
+      <img
+        class="rawgraph"
+        src="genero-letterboxd.svg"
+        alt="Distribución de mis películas de Letterboxd según género">
+
+      <p class="nota">
+        Para evitar duplicaciones, cada película fue clasificada
+        utilizando un único género principal.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    Visualización de la Información · Datos personales de Letterboxd
+  </footer>
+
+
+  <!-- Script responsive de Datawrapper -->
+  <script type="text/javascript">
+    (function () {
+      window.addEventListener("message", function (e) {
+        if (e.data["datawrapper-height"] !== undefined) {
+          var iframes = document.querySelectorAll("iframe");
+
+          for (var chartId in e.data["datawrapper-height"]) {
+            for (var i = 0; i < iframes.length; i++) {
+              if (iframes[i].contentWindow === e.source) {
+                iframes[i].style.height =
+                  e.data["datawrapper-height"][chartId] + "px";
+              }
+            }
+          }
+        }
+      });
+    })();
+  </script>
+
+</body>
+
 </html>
