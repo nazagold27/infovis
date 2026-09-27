@@ -118,6 +118,22 @@
       font-style: italic;
     }
 
+    /* TABLEAU */
+    .tableau-container {
+      width: 100%;
+      margin: 20px auto 0;
+      overflow: hidden;
+    }
+
+    .tableauPlaceholder {
+      width: 100% !important;
+      margin: 0 auto;
+    }
+
+    .tableauPlaceholder object {
+      max-width: 100%;
+    }
+
     /* FOOTER */
     footer {
       background: #14181c;
@@ -173,22 +189,23 @@
     </section>
 
 
- <!-- FLOURISH -->
-<section class="visualizacion">
+    <!-- FLOURISH -->
+    <section class="visualizacion">
 
-  <span class="herramienta">Flourish</span>
+      <span class="herramienta">Flourish</span>
 
-  <div class="flourish-embed flourish-chart" data-src="visualisation/30105516">
-    <script src="https://public.flourish.studio/resources/embed.js"></script>
-    <noscript>
-      <img
-        src="https://public.flourish.studio/visualisation/30105516/thumbnail"
-        width="100%"
-        alt="chart visualization">
-    </noscript>
-  </div>
+      <div class="flourish-embed flourish-chart" data-src="visualisation/30105516">
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
 
-</section>
+        <noscript>
+          <img
+            src="https://public.flourish.studio/visualisation/30105516/thumbnail"
+            width="100%"
+            alt="chart visualization">
+        </noscript>
+      </div>
+
+    </section>
 
 
     <!-- DATAWRAPPER -->
@@ -196,7 +213,37 @@
 
       <span class="herramienta">Datawrapper</span>
 
-      <iframe title="¿Veo las películas que digo que quiero ver?" aria-label="Split Bars" id="datawrapper-chart-d8E4g" src="https://datawrapper.dwcdn.net/d8E4g/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="421" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+      <iframe
+        title="¿Veo las películas que digo que quiero ver?"
+        aria-label="Split Bars"
+        id="datawrapper-chart-d8E4g"
+        src="https://datawrapper.dwcdn.net/d8E4g/3/"
+        scrolling="no"
+        frameborder="0"
+        style="width: 0; min-width: 100% !important; border: none;"
+        height="421"
+        data-external="1">
+      </iframe>
+
+      <script type="text/javascript">
+        (function () {
+          function e() {
+            window.addEventListener(`message`, function (e) {
+              if (e.data[`datawrapper-height`] !== void 0) {
+                var t = document.querySelectorAll(`iframe`);
+
+                for (var n in e.data[`datawrapper-height`])
+                  for (var r = 0, i; i = t[r]; r++)
+                    if (i.contentWindow === e.source) {
+                      var a = e.data[`datawrapper-height`][n] + `px`;
+                      i.style.height = a;
+                    }
+              }
+            })
+          }
+          e()
+        })();
+      </script>
 
     </section>
 
@@ -226,6 +273,102 @@
 
     </section>
 
+
+    <!-- TABLEAU -->
+    <section class="visualizacion">
+
+      <span class="herramienta">Tableau</span>
+
+      <div class="tableau-container">
+
+        <div
+          class="tableauPlaceholder"
+          id="viz1790538722010"
+          style="position: relative">
+
+          <noscript>
+            <a href="#">
+              <img
+                alt="Dashboard 1"
+                src="https://public.tableau.com/static/images/ta/tableauconlikeparatp/Dashboard1/1_rss.png"
+                style="border: none; width: 100%;">
+            </a>
+          </noscript>
+
+          <object
+            class="tableauViz"
+            style="display:none;">
+
+            <param
+              name="host_url"
+              value="https%3A%2F%2Fpublic.tableau.com%2F">
+
+            <param
+              name="embed_code_version"
+              value="3">
+
+            <param
+              name="site_root"
+              value="">
+
+            <param
+              name="name"
+              value="tableauconlikeparatp/Dashboard1">
+
+            <param
+              name="tabs"
+              value="no">
+
+            <param
+              name="toolbar"
+              value="yes">
+
+            <param
+              name="static_image"
+              value="https://public.tableau.com/static/images/ta/tableauconlikeparatp/Dashboard1/1.png">
+
+            <param
+              name="animate_transition"
+              value="yes">
+
+            <param
+              name="display_static_image"
+              value="yes">
+
+            <param
+              name="display_spinner"
+              value="yes">
+
+            <param
+              name="display_overlay"
+              value="yes">
+
+            <param
+              name="display_count"
+              value="yes">
+
+            <param
+              name="language"
+              value="en-US">
+
+            <param
+              name="filter"
+              value="publish=yes">
+
+          </object>
+
+        </div>
+
+      </div>
+
+      <p class="nota">
+        Pasá el cursor sobre “Con like” o “Sin like” para comparar
+        cómo se distribuyen mis puntuaciones.
+      </p>
+
+    </section>
+
+
   </main>
 
 
@@ -252,6 +395,35 @@
         }
       });
     })();
+  </script>
+
+
+  <!-- Script Tableau -->
+  <script type="text/javascript">
+    var divElement =
+      document.getElementById("viz1790538722010");
+
+    var vizElement =
+      divElement.getElementsByTagName("object")[0];
+
+    vizElement.style.width = "100%";
+
+    if (divElement.offsetWidth > 700) {
+      vizElement.style.height = "677px";
+    } else {
+      vizElement.style.height = "727px";
+    }
+
+    var scriptElement =
+      document.createElement("script");
+
+    scriptElement.src =
+      "https://public.tableau.com/javascripts/api/viz_v1.js";
+
+    vizElement.parentNode.insertBefore(
+      scriptElement,
+      vizElement
+    );
   </script>
 
 </body>
